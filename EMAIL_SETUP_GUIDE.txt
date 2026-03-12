@@ -1,0 +1,80 @@
+============================================
+📧 GMAIL OTP SETUP - STEP BY STEP GUIDE
+============================================
+
+STEP 1: Gmail Account Settings
+--------------------------------
+1. Apna Gmail kholo (jo project mein use karni hai)
+2. Top right corner - profile picture click karo
+3. "Manage your Google Account" click karo
+4. "Security" tab pe jao (left sidebar)
+
+STEP 2: 2-Step Verification ON Karo
+-------------------------------------
+1. Security page pe "2-Step Verification" dhundo
+2. Click karo aur ON karo
+3. Phone number se verify karo
+(Agar already ON hai to Step 3 pe jao)
+
+STEP 3: App Password Generate Karo
+-------------------------------------
+1. Security page pe wapas jao
+2. Search karo "App passwords" (search bar mein type karo)
+3. "App passwords" option click karo
+4. "Select app" dropdown mein "Mail" choose karo
+5. "Select device" mein "Windows Computer" choose karo
+6. "Generate" button click karo
+7. 16-digit password milega jaise: "abcd efgh ijkl mnop"
+   (SPACES KE SAATH COPY KARO!)
+
+STEP 4: app.py mein Update Karo
+----------------------------------
+File: app.py kholo
+Line 16-17 update karo:
+
+    EMAIL_ADDRESS  = "tumhara_email@gmail.com"
+    EMAIL_PASSWORD = "abcd efgh ijkl mnop"
+                      ↑ Woh 16-digit app password
+
+STEP 5: Test Karo
+------------------
+1. python app.py run karo
+2. Browser: localhost:5000
+3. Register karo
+4. Logout karo
+5. "Forgot Password?" click karo
+6. Email enter karo
+7. ✅ OTP aana chahiye Gmail pe!
+
+============================================
+⚠️  IMPORTANT NOTES
+============================================
+
+❌ GALAT: EMAIL_PASSWORD = "tumhara_normal_password"
+✅ SAHI:  EMAIL_PASSWORD = "abcd efgh ijkl mnop"  (App Password)
+
+- App Password = 16 letters (spaces ke saath ya bina)
+- Normal Gmail password kaam NAHI karega
+- Spam folder bhi check karna (pehli baar spam mein aa sakta hai)
+- 2FA zaroor ON hona chahiye
+
+============================================
+🔧 TROUBLESHOOTING
+============================================
+
+ERROR: "SMTPAuthenticationError"
+→ App Password galat hai, dobara generate karo
+
+ERROR: "Connection refused"
+→ Internet check karo
+→ Antivirus/Firewall port 465 block kar raha hoga
+
+OTP Spam mein ja raha hai?
+→ Normal hai pehli baar! Spam se "Not Spam" mark karo
+
+Email nahi aa raha?
+→ 2-3 minute wait karo
+→ Spam/Junk folder check karo
+→ Email address sahi hai?
+
+============================================
